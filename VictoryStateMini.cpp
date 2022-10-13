@@ -24,9 +24,7 @@ bool VictoryStateMini::Init(GameLoop* game)
 
 void VictoryStateMini::Draw()
 {
-	/*SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-	SDL_RenderClear(gRenderer);*/
-	//Render texture to screen
+	
 
 	playingState->get()->Draw();
 	victoryScreen.render(nullptr);

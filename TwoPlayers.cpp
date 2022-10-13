@@ -179,8 +179,7 @@ void TwoPlayers::Update()
 
 void TwoPlayers::Draw()
 {
-	/*SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-	SDL_RenderClear(gRenderer);*/
+	
 
 
 	
@@ -199,7 +198,6 @@ void TwoPlayers::Draw()
 	whiteDrawButton.render();
 	blackDrawButton.render();
 
-	//SDL_RenderPresent(gRenderer);
 }
 
 void TwoPlayers::changeTurnSide()

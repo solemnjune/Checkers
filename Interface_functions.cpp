@@ -3,7 +3,6 @@
 
 bool init()
 {
-    //Initialization flag
     bool success = true;
 
     //Initialize SDL

@@ -5,8 +5,8 @@ void StateGameButton::init(wrapTexture* buttonTexture, int tX, int tY, int sX, i
 {
 	buttonTexturep = buttonTexture;
 
-	tRect.h = 50; // 204
-	tRect.w = 211; // 863 // 4.23
+	tRect.h = 50; 
+	tRect.w = 211; 
 	tRect.x = tX;
 	tRect.y = tY;
 

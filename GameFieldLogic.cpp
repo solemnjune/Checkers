@@ -6,10 +6,7 @@ bool GameFieldLogic::init()
 {
 	if (!(fieldTexture.loadFromFile("PlayingGame/Field.png")
 		&& fieldEdgingTexture.loadFromFile("PlayingGame/Edging.png")
-		&& checkersPiecesTexture.loadFromFile("PlayingGame/CheckersPieces.png", true)
-		/*&& checkersPiecesMiniTexture.loadFromFile("PlayingGame/CheckersSmall.png",true)
-		&& buttonsTexture.loadFromFile("PlayingGame/Buttons.png", true)
-		&& numbersTexture.loadFromFile("PlayingGame/Numbers.png", true)*/))
+		&& checkersPiecesTexture.loadFromFile("PlayingGame/CheckersPieces.png", true)))
 	{
 		std::cerr << "GameField: Failed to load media!\n";
 		return false;
@@ -185,7 +182,6 @@ void GameFieldLogic::checkMoves(std::unique_ptr<I_Player>& currentSidep, bool on
 			for (int i = 0; i < numPossibleMoves; i++)
 			{
 				mandatoryMoves[i] = possibleMoves[i];
-				//std::cout << i << ": " << (fieldp->setArrPosMoves() + i)->first << "  " << (fieldp->setArrPosMoves() + i)->second << std::endl;
 			}
 		}
 	}
@@ -198,7 +194,6 @@ void GameFieldLogic::checkMoves(std::unique_ptr<I_Player>& currentSidep, bool on
 			for (int i = 0; i < numMandatoryMoves; i++)
 			{
 				possibleMoves[i] = mandatoryMoves[i];
-				//std::cout << i << ": " << (fieldp->setArrPosMoves() + i)->first << "  " << (fieldp->setArrPosMoves() + i)->second << std::endl;
 			}
 		}
 		else
@@ -356,27 +351,21 @@ bool  GameFieldLogic::move(std::unique_ptr<I_Player>& currentSidep)
 		if (fieldLogic.move(selectedSquare.first, selectedSquare.second, targetSquare.first, targetSquare.second))
 		{
 			killMode = true;
-			//killedOne = true;
 			selectedSquare = targetSquare;
 			targetSquare.first = -1;
 			targetSquare.second = -1;
-			//updateCheckersOwned();
 			currentSidep->setCheckersKilled()++;
 			checkMoves(currentSidep, true);
 			if (numPossibleMoves == 0)
 			{
 
 				killMode = false;
-				//killedOne = false;
 				return true;
-				//changeTurnSide(currentSidep);
 			}
 		}
 		else
 		{
-			//killedOne = false;
 			return true;
-			//changeTurnSide();
 		}
 	}
 	return false;
@@ -458,7 +447,7 @@ bool GameFieldLogic::checkMovePermition(int x, int y)
 
 void GameFieldLogic::highlightSpecialSquares()
 {
-	if (numPossibleMoves > 0)   //(selectedSquare.first >= 0)
+	if (numPossibleMoves > 0)  
 	{
 		checkersPiecesTexture.setX(0);
 		checkersPiecesTexture.setY(checkersPiecesTexture.getHeight());
@@ -474,7 +463,7 @@ void GameFieldLogic::highlightSpecialSquares()
 		checkersPiecesTexture.setY(0);
 	}
 
-	if (numMandatoryMoves > 0)   //(selectedSquare.first >= 0)
+	if (numMandatoryMoves > 0)   
 	{
 		checkersPiecesTexture.setX(0);
 		checkersPiecesTexture.setY(checkersPiecesTexture.getHeight());
@@ -505,5 +494,4 @@ void GameFieldLogic::nullifySpecialSquares()
 {
 	selectedSquare.first = -1;
 	selectedSquare.second = -1;
-	//numPossibleMoves = 0;
 }
