@@ -52,7 +52,7 @@ void I_Player::render()
 void I_Player::renderArrow()
 {
 	arrowTexturep->setHeigth(arrowTexturep->getOriginalHeight() / 6);
-	arrowTexturep->setWidth(arrowTexturep->getOriginalWidth() / 2);
+	arrowTexturep->setWidth(arrowTexturep->getOriginalWidth() / 5*2);
 	arrowTexturep->setX(0);
 	arrowTexturep->setY((arrowTexturep->getOriginalHeight()) / 6 * 5);
 	arrowTexturep->render(&tArrowRect);

@@ -31,6 +31,7 @@ private:
 	SDL_Event event;
 	int x, y;
 
+	ClickGameButton toMenuButton;
 	ClickGameButton endTurnButton;
 	ClickGameButton surrenderButton;
 	StateGameButton whiteDrawButton;

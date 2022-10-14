@@ -14,6 +14,7 @@ public:
 	const int getSourceX() { return sourceX; }
 	const int getSourceWidth() { return sourceWidth; }
 	const int getNumStages(){ return numStages; }
+	const int getCurrentStage() { return renderStage; }
 	const int getFramesPerSlide () { return framesPerSlide; }
 	const int getMaxButtonsInPicture() { return maxButtonsInPicture; }
 	const int getXTrect() { return tRect.x; }

@@ -4,7 +4,7 @@
 #include <iostream>
 #include "GameLoop.h"
 #include "VictoryStateMini.h"
-TwoPlayers::TwoPlayers(): endTurnButton(3,3,3), surrenderButton (3,3,3), blackDrawButton (5,2,6), whiteDrawButton (5,2,6)
+TwoPlayers::TwoPlayers(): endTurnButton(3,2,3), surrenderButton (3,3,3), blackDrawButton (5,2,6), whiteDrawButton (5,2,6), toMenuButton(3,3,3)
 {
 
 }
@@ -37,10 +37,11 @@ bool TwoPlayers::Init(GameLoop* game)
 	}
 	gamePtr = game;
 
-	endTurnButton.init(&buttonsTexture, 1070, 940, buttonsTexture.getOriginalWidth() / 2, buttonsTexture.getOriginalWidth() / 4 );
-	surrenderButton.init(&buttonsTexture, 1640, 940, buttonsTexture.getOriginalWidth() / 4*3, buttonsTexture.getOriginalWidth() / 4);
-	whiteDrawButton.init(&buttonsTexture, 1500, 655, 0, buttonsTexture.getOriginalWidth() / 2);
-	blackDrawButton.init(&buttonsTexture, 1500, 255, 0, buttonsTexture.getOriginalWidth() / 2);
+	endTurnButton.init(&buttonsTexture, 1070, 940, buttonsTexture.getOriginalWidth() / 5*2, buttonsTexture.getOriginalWidth() / 5 );
+	surrenderButton.init(&buttonsTexture, 1640, 940, buttonsTexture.getOriginalWidth() / 5*3, buttonsTexture.getOriginalWidth() / 5);
+	whiteDrawButton.init(&buttonsTexture, 1500, 655, 0, buttonsTexture.getOriginalWidth() / 5*2);
+	blackDrawButton.init(&buttonsTexture, 1500, 255, 0, buttonsTexture.getOriginalWidth() / 5*2);
+	toMenuButton.init(&buttonsTexture, 1760, 940, buttonsTexture.getOriginalWidth() / 5 * 4, buttonsTexture.getOriginalWidth() / 5);
 
 	checkersPiecesMiniTexture.setHeigth(checkersPiecesMiniTexture.getOriginalHeight() / 2);
 	numbersTexture.setWidth(numbersTexture.getOriginalWidth() / 13);
@@ -128,6 +129,10 @@ void TwoPlayers::HandleEvents()
 				{
 					blackDrawButton.pressButton();
 				}
+				else if (toMenuButton.mouseOnButton(x, y))
+				{
+					toMenuButton.pressButton();
+				}
 				else
 				{
 					field.nullifySpecialSquares();
@@ -161,6 +166,8 @@ void TwoPlayers::Update()
 		currentSidep = &whitePlayer;
 		field.makeNewGame();
 		victoryScreenShown = false;
+		blackDrawButton.nullifyButton();
+		whiteDrawButton.nullifyButton();
 	}
 	if (field.update(*currentSidep))
 	{
@@ -171,6 +178,10 @@ void TwoPlayers::Update()
 		whiteDrawButton.nullifyButton();
 		blackDrawButton.nullifyButton();
 		makeNewGame(true);
+	}
+	if (toMenuButton.getCurrentStage() == toMenuButton.getNumStages()-1)
+	{
+		gamePtr->PopState();
 	}
 }
 
@@ -190,14 +201,14 @@ void TwoPlayers::Draw()
 	whitePlayer->render();
 	currentSidep->get()->renderArrow();
 
-	if (field.getKillMode())
+	if ((endTurnButton.getPressedState()|| endTurnButton.getCurrentStage()!= 0)||field.getKillMode())
 	{
 		endTurnButton.render();
 	}
 	surrenderButton.render();
 	whiteDrawButton.render();
 	blackDrawButton.render();
-
+	toMenuButton.render();
 }
 
 void TwoPlayers::changeTurnSide()
@@ -220,7 +231,7 @@ void TwoPlayers::changeTurnSide()
 	{
 		field.checkMandatoryMoves(*currentSidep);
 	}
-	endTurnButton.nullifyButton();
+	//endTurnButton.nullifyButton();
 }
 void  TwoPlayers::updateCheckersOwned()
 {
