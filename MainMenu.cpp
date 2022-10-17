@@ -35,10 +35,10 @@ bool MainMenu::Init(GameLoop* game)
 	
 	gamePtr = game;
 
-	TwoPlayersButton.init(&TwoPlayersTexture,SCREEN_WIDTH * 0.05, SCREEN_HEIGHT * 0.33);
-	vsCpuButton.init(&vsCpuTexture, SCREEN_WIDTH * 0.05, TwoPlayersButton.getYTrect() + SCREEN_HEIGHT * 0.14);
-	optionsButton.init(&optionsTexture, SCREEN_WIDTH * 0.05, vsCpuButton.getYTrect() + SCREEN_HEIGHT * 0.14);
-	exitButton.init(&exitTexture, SCREEN_WIDTH * 0.05, optionsButton.getYTrect() + SCREEN_HEIGHT * 0.14);
+	TwoPlayersButton.init(&TwoPlayersTexture,96 , 356);
+	vsCpuButton.init(&vsCpuTexture, 96, TwoPlayersButton.getYTrect() + 151);
+	optionsButton.init(&optionsTexture, 96, vsCpuButton.getYTrect() + 151);
+	exitButton.init(&exitTexture, 96, optionsButton.getYTrect() + 151);
 	
 	return true;
 
@@ -102,8 +102,8 @@ void MainMenu::HandleEvents()
 			SDL_GetWindowSize(gWindow, &width, &height);
 			
 			SDL_GetMouseState(&x, &y);
-			x = (double)x * (double)((double)SCREEN_WIDTH / (double)width);
-			y = (double)y * (double)((double)SCREEN_HEIGHT / (double)height);
+			x = (double)x * (double)((double)1920 / (double)width);
+			y = (double)y * (double)((double)1080 / (double)height);
 
 			if (TwoPlayersButton.mouseOnButton(x,y))
 			{
@@ -129,8 +129,8 @@ void MainMenu::HandleEvents()
 			SDL_GetWindowSize(gWindow, &width, &height);
 
 			SDL_GetMouseState(&x, &y);
-			x = (double)x * (double)((double)SCREEN_WIDTH / (double)width);
-			y = (double)y * (double)((double)SCREEN_HEIGHT / (double)height);
+			x = (double)x * (double)((double)1920 / (double)width);
+			y = (double)y * (double)((double)1080 / (double)height);
 			if (event.button.button == SDL_BUTTON_LEFT) {
 				if (TwoPlayersButton.mouseOnButton(x, y))
 				{

@@ -99,8 +99,8 @@ void TwoPlayers::HandleEvents()
 			SDL_GetWindowSize(gWindow, &width, &height);
 
 			SDL_GetMouseState(&x, &y);
-			x = (double)x * (double)((double)SCREEN_WIDTH / (double)width);
-			y = (double)y * (double)((double)SCREEN_HEIGHT / (double)height);
+			x = (double)x * (double)((double)1920 / (double)width);
+			y = (double)y * (double)((double)1080 / (double)height);
 			if (event.button.button == SDL_BUTTON_LEFT) {
 				if (field.mouseOnField(x,y))
 				{

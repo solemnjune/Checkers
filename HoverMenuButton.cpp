@@ -12,8 +12,8 @@ void HoverMenuButton::init(wrapTexture* buttonTexture, int tX, int tY, int sX, i
 {
     buttonTexturep = buttonTexture;
 
-    tRect.h = SCREEN_HEIGHT * 0.14;
-    tRect.w = SCREEN_WIDTH * 0.38;
+    tRect.h = 151;
+    tRect.w = 730;
     tRect.x = tX;
     tRect.y = tY;
 

@@ -28,10 +28,7 @@ int main (int argc, char* argv[])
 		std::cerr <<"Failed to initialize!\n";
 
 	}
-	//SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN);
-	SDL_RenderSetLogicalSize(gRenderer, 1920, 1080);
 	
-	SDL_SetWindowFullscreen(gWindow, SDL_WINDOW_FULLSCREEN_DESKTOP);
 	
 	GameLoop game;
 	game.Init();
