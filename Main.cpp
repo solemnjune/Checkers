@@ -8,6 +8,7 @@
 #include <fstream>
 #include <ctime>
 #pragma warning(disable : 4996)
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 
 
 
