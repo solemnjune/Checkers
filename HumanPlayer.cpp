@@ -1,4 +1,4 @@
-#include "HumanPlayer.h"
+ï»¿#include "HumanPlayer.h"
 #include "GameFieldLogic.h"
 #include <iostream>
 
@@ -12,19 +12,19 @@ bool HumanPlayer::selectSquare()
 	{
 		return false;
 	}
-	int tempX = (fieldp->getMouseX() - fieldp->getFieldRectX()); // èç X êîîðäèíòû îòíîñèòåëüíî ýêðàíà ïîëó÷àåì X êîîðäèíàòó îòíîñèòåëüíî íà÷àëà êàðòèíêè ñ èãðîâûì ïîëåì
-	tempX -= tempX % (fieldp->getFieldRectW() / 8); // òåïåðü tempX óêàçûâàåò íà áëèæàéøóþ ëåâóþ (ïî îòíîøåíèþ ê X)  ãðàíü ñòîëáöà ïîëÿ
-	tempX = tempX / (fieldp->getFieldRectW() / 8); // tempX òåïåðü õðàíèò íîìåð ñòîëáöà
+	int tempX = (fieldp->getMouseX() - fieldp->getFieldRectX()); // Ð¸Ð· X ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ñ‚Ñ‹ Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ ÑÐºÑ€Ð°Ð½Ð° Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼ X ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñƒ Ð¾Ñ‚Ð½Ð¾ÑÐ¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾ Ð½Ð°Ñ‡Ð°Ð»Ð° ÐºÐ°Ñ€Ñ‚Ð¸Ð½ÐºÐ¸ Ñ Ð¸Ð³Ñ€Ð¾Ð²Ñ‹Ð¼ Ð¿Ð¾Ð»ÐµÐ¼
+	tempX -= tempX % (fieldp->getFieldRectW() / 8); // Ñ‚ÐµÐ¿ÐµÑ€ÑŒ tempX ÑƒÐºÐ°Ð·Ñ‹Ð²Ð°ÐµÑ‚ Ð½Ð° Ð±Ð»Ð¸Ð¶Ð°Ð¹ÑˆÑƒÑŽ Ð»ÐµÐ²ÑƒÑŽ (Ð¿Ð¾ Ð¾Ñ‚Ð½Ð¾ÑˆÐµÐ½Ð¸ÑŽ Ðº X)  Ð³Ñ€Ð°Ð½ÑŒ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð° Ð¿Ð¾Ð»Ñ
+	tempX = tempX / (fieldp->getFieldRectW() / 8); // tempX Ñ‚ÐµÐ¿ÐµÑ€ÑŒ Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð°
 
-	int tempY = (fieldp->getMouseY() - fieldp->getFieldRectY());  // òîæå ñàìîå, ÷òî ñ tempX, òîëüêî â ýòîò ðàç èùåì íîìåð ñòðîêè
+	int tempY = (fieldp->getMouseY() - fieldp->getFieldRectY());  // Ñ‚Ð¾Ð¶Ðµ ÑÐ°Ð¼Ð¾Ðµ, Ñ‡Ñ‚Ð¾ Ñ tempX, Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð² ÑÑ‚Ð¾Ñ‚ Ñ€Ð°Ð· Ð¸Ñ‰ÐµÐ¼ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚Ñ€Ð¾ÐºÐ¸
 	tempY -= tempY % (fieldp->getFieldRectH() / 8);
 	tempY = tempY / (fieldp->getFieldRectH() / 8);
 	fieldp->nullifyMouse();
 
-	if ((tempX + tempY) % 2 == 1)// åñëè ñóììà íîìåðîâ ñòðîêè è ñòîëáöà äåëèòñÿ íà 2 áåç îñòàòêà, òî êëåòêà ñ ýòèì íîìåðîì  áåëàÿ, íåèãðîâàÿ
+	if ((tempX + tempY) % 2 == 1)// ÐµÑÐ»Ð¸ ÑÑƒÐ¼Ð¼Ð° Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð² ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð¸ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð° Ð´ÐµÐ»Ð¸Ñ‚ÑÑ Ð½Ð° 2 Ð±ÐµÐ· Ð¾ÑÑ‚Ð°Ñ‚ÐºÐ°, Ñ‚Ð¾ ÐºÐ»ÐµÑ‚ÐºÐ° Ñ ÑÑ‚Ð¸Ð¼ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼  Ð±ÐµÐ»Ð°Ñ, Ð½ÐµÐ¸Ð³Ñ€Ð¾Ð²Ð°Ñ
 	{
 
-		tempX = (tempX - ((tempY + 1) % 2)) / 2;// ò.ê. ìû õðàíèì ïîëå 8*8 â âèäå ïîëÿ 8*4, òî íåîáõîäèìî ïåðåâåñòè íîìåð ñòîëáöà â ïîäõîäÿùèé äëÿ íàñ ôîðìàò
+		tempX = (tempX - ((tempY + 1) % 2)) / 2;// Ñ‚.Ðº. Ð¼Ñ‹ Ñ…Ñ€Ð°Ð½Ð¸Ð¼ Ð¿Ð¾Ð»Ðµ 8*8 Ð² Ð²Ð¸Ð´Ðµ Ð¿Ð¾Ð»Ñ 8*4, Ñ‚Ð¾ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ Ð¿ÐµÑ€ÐµÐ²ÐµÑÑ‚Ð¸ Ð½Ð¾Ð¼ÐµÑ€ ÑÑ‚Ð¾Ð»Ð±Ñ†Ð° Ð² Ð¿Ð¾Ð´Ñ…Ð¾Ð´ÑÑ‰Ð¸Ð¹ Ð´Ð»Ñ Ð½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚
 		if (checkSideOfSquare(tempY, tempX) && fieldp->checkMovePermition(tempY, tempX))
 		{
 			fieldp->setSelectedSquare().first = tempY;

@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "Interface_functions.h"
 #include "GameFieldLogicSquares.h"
 #include "HumanPlayer.h"
@@ -86,7 +86,7 @@ private:
 	
 	SDL_Rect fieldRectT;
 	SDL_Rect fieldEdgingRectT;
-	SDL_Rect squareRects[8][4]; // квадраты, куда будут рендериться картинки шашек
+	SDL_Rect squareRects[8][4]; // РєРІР°РґСЂР°С‚С‹, РєСѓРґР° Р±СѓРґСѓС‚ СЂРµРЅРґРµСЂРёС‚СЊСЃСЏ РєР°СЂС‚РёРЅРєРё С€Р°С€РµРє
 
 	GameFieldLogicSquares fieldLogic;
 
@@ -95,7 +95,7 @@ private:
 	std::pair<int, int> possibleMoves[13];
 	std::pair<int, int> mandatoryMoves[12];
 
-	//bool killedOne; // следит, чтобы игрок мог закончить ход с помощью кнопки endTurn только если он срубил хотя бы одну шашку
+	//bool killedOne; // СЃР»РµРґРёС‚, С‡С‚РѕР±С‹ РёРіСЂРѕРє РјРѕРі Р·Р°РєРѕРЅС‡РёС‚СЊ С…РѕРґ СЃ РїРѕРјРѕС‰СЊСЋ РєРЅРѕРїРєРё endTurn С‚РѕР»СЊРєРѕ РµСЃР»Рё РѕРЅ СЃСЂСѓР±РёР» С…РѕС‚СЏ Р±С‹ РѕРґРЅСѓ С€Р°С€РєСѓ
 
 	int numPossibleMoves;
 	int numMandatoryMoves;
@@ -114,7 +114,7 @@ private:
 
 	bool move(std::unique_ptr<I_Player>& currentSidep);
 	
-	void highlightSpecialSquares(); // рендерит специальную текстуру для выделенных и возможных для хода квадратов
+	void highlightSpecialSquares(); // СЂРµРЅРґРµСЂРёС‚ СЃРїРµС†РёР°Р»СЊРЅСѓСЋ С‚РµРєСЃС‚СѓСЂСѓ РґР»СЏ РІС‹РґРµР»РµРЅРЅС‹С… Рё РІРѕР·РјРѕР¶РЅС‹С… РґР»СЏ С…РѕРґР° РєРІР°РґСЂР°С‚РѕРІ
 
 	friend void I_Player::render();
 	friend void I_Player::renderArrow();

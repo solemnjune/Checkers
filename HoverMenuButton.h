@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "I_Button.h"
 
 class HoverMenuButton : public I_Button
@@ -16,7 +16,7 @@ public:
 
 
 private:
-	int framesOfSlideShown; // сколько раз был показан слайд	
+	int framesOfSlideShown; // СЃРєРѕР»СЊРєРѕ СЂР°Р· Р±С‹Р» РїРѕРєР°Р·Р°РЅ СЃР»Р°Р№Рґ	
 	static MenuChoice selectedButton;
 	const MenuChoice buttonType;
 };

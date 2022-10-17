@@ -1,4 +1,4 @@
-#include "GameLoop.h"
+﻿#include "GameLoop.h"
 #include <iostream>
 void GameLoop::Init()
 {

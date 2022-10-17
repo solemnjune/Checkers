@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "I_Player.h"
 
 class HumanPlayer :

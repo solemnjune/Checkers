@@ -1,4 +1,4 @@
-#include "StateGameButton.h"
+ï»¿#include "StateGameButton.h"
 
 
 void StateGameButton::init(wrapTexture* buttonTexture, int tX, int tY, int sX, int sW)
@@ -59,7 +59,7 @@ void StateGameButton::render()
 	}
 	buttonTexturep->setWidth(getSourceWidth());
 	buttonTexturep->setHeigth(buttonTexturep->getOriginalHeight() / getMaxButtonsInPicture());
-	buttonTexturep->setY(renderStage * buttonTexturep->getHeight());//buttonTexture.y èíèöèàëèçèðóåòñÿ çäåñü, ò.ê. çàâèñèò îò ìåíÿþùåãîñÿ ñîñòîÿíèÿ renderStage
+	buttonTexturep->setY(renderStage * buttonTexturep->getHeight());//buttonTexture.y Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÑ‚ÑÑ Ð·Ð´ÐµÑÑŒ, Ñ‚.Ðº. Ð·Ð°Ð²Ð¸ÑÐ¸Ñ‚ Ð¾Ñ‚ Ð¼ÐµÐ½ÑÑŽÑ‰ÐµÐ³Ð¾ÑÑ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ renderStage
 	buttonTexturep->setX(getSourceX());
 	buttonTexturep->render(&tRect);
 }

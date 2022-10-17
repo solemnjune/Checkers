@@ -1,4 +1,4 @@
-#include "I_Button.h"
+﻿#include "I_Button.h"
 
 
 I_Button::I_Button(int numOfStages, int numFramesPerSlide, int numMaxButtonsInPicture):numStages(numOfStages), framesPerSlide(numFramesPerSlide), maxButtonsInPicture(numMaxButtonsInPicture)

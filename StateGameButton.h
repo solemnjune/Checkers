@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "I_Button.h"
 class StateGameButton :
     public I_Button
