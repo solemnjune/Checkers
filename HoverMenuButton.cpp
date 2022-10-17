@@ -1,4 +1,4 @@
-#include "HoverMenuButton.h"
+ï»¿#include "HoverMenuButton.h"
 HoverMenuButton::MenuChoice HoverMenuButton::selectedButton;
 
 HoverMenuButton::HoverMenuButton(MenuChoice type, int numOfStages, int numFramesPerSlide, int numMaxButtonsInPicture):buttonType(type), I_Button( numOfStages,  numFramesPerSlide, numMaxButtonsInPicture)
@@ -38,7 +38,7 @@ void HoverMenuButton::render()
 {
     
     buttonTexturep->setWidth(getSourceWidth());
-    buttonTexturep->setY(renderStage);//buttonTexture.y èíèöèàëèçèðóåòñÿ çäåñü, ò.ê. çàâèñèò îò ìåíÿþùåãîñÿ ñîñòîÿíèÿ renderStage
+    buttonTexturep->setY(renderStage);//buttonTexture.y Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÑ‚ÑÑ Ð·Ð´ÐµÑÑŒ, Ñ‚.Ðº. Ð·Ð°Ð²Ð¸ÑÐ¸Ñ‚ Ð¾Ñ‚ Ð¼ÐµÐ½ÑÑŽÑ‰ÐµÐ³Ð¾ÑÑ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ñ renderStage
 
     buttonTexturep->render(&tRect);
 

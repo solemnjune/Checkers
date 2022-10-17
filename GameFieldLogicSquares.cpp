@@ -1,4 +1,4 @@
-#include "GameFieldLogicSquares.h"
+п»ї#include "GameFieldLogicSquares.h"
 #include <iostream>
 
 void GameFieldLogicSquares::init()
@@ -7,7 +7,7 @@ void GameFieldLogicSquares::init()
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			state[i][j] = SquareState::BlackMan;// квадрат шахматного поля чёрный (в шашках фигуры только на чёрном), только тогда, когда сумма номера строки и номера столбца нечётная
+			state[i][j] = SquareState::BlackMan;// РєРІР°РґСЂР°С‚ С€Р°С…РјР°С‚РЅРѕРіРѕ РїРѕР»СЏ С‡С‘СЂРЅС‹Р№ (РІ С€Р°С€РєР°С… С„РёРіСѓСЂС‹ С‚РѕР»СЊРєРѕ РЅР° С‡С‘СЂРЅРѕРј), С‚РѕР»СЊРєРѕ С‚РѕРіРґР°, РєРѕРіРґР° СЃСѓРјРјР° РЅРѕРјРµСЂР° СЃС‚СЂРѕРєРё Рё РЅРѕРјРµСЂР° СЃС‚РѕР»Р±С†Р° РЅРµС‡С‘С‚РЅР°СЏ
 		}
 	}
 
@@ -53,7 +53,7 @@ bool GameFieldLogicSquares::move(int rowStart, int colonStart, int rowTarget, in
 	int differenceColonSign = colonStart > colonTarget ? -1 : 1;
 	bool kill = 0;
 	state[tempRow][tempColon] = SquareState::Empty;
-	//если игрок срубил шашку, меняем и её состояние на Empty
+	//РµСЃР»Рё РёРіСЂРѕРє СЃСЂСѓР±РёР» С€Р°С€РєСѓ, РјРµРЅСЏРµРј Рё РµС‘ СЃРѕСЃС‚РѕСЏРЅРёРµ РЅР° Empty
 	while (tempRow != rowTarget)
 	{
 		if (state[tempRow][tempColon] != SquareState::Empty)

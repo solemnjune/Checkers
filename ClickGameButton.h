@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "I_Button.h"
 class ClickGameButton :
     public I_Button

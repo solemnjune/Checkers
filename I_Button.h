@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "Interface_textures.h"
 
 class wrapTexture;
@@ -33,8 +33,8 @@ protected:
 private:
 	int sourceWidth;
 	int sourceX;
-	const int numStages;//сколько всего спрайтов кнопки есть в текстуре
+	const int numStages;//СЃРєРѕР»СЊРєРѕ РІСЃРµРіРѕ СЃРїСЂР°Р№С‚РѕРІ РєРЅРѕРїРєРё РµСЃС‚СЊ РІ С‚РµРєСЃС‚СѓСЂРµ
 	const int framesPerSlide;
-	const int maxButtonsInPicture; // сколько спрайтов кнопки может поместиться в текстуру вертикально
+	const int maxButtonsInPicture; // СЃРєРѕР»СЊРєРѕ СЃРїСЂР°Р№С‚РѕРІ РєРЅРѕРїРєРё РјРѕР¶РµС‚ РїРѕРјРµСЃС‚РёС‚СЊСЃСЏ РІ С‚РµРєСЃС‚СѓСЂСѓ РІРµСЂС‚РёРєР°Р»СЊРЅРѕ
 };
 

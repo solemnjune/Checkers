@@ -1,4 +1,4 @@
-#include <SDL.h>
+﻿#include <SDL.h>
 #include <iostream>
 #include "Interface_textures.h"
 #include "Interface_functions.h"

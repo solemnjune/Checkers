@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "I_GameStates.h"
 #include "Interface_functions.h"
 #include <memory>
