@@ -1,0 +1,19 @@
+
+*.obj
+Pics/EG.png
+Pics/O.png
+Pics/TP.png
+Pics/VC.png
+Pics/Монтажная область 1 (2).png
+Pics/Монтажная область 1.png
+Pics/пример.png
+*.recipe
+*.iobj
+*.ipdb
+Pics/
+Debug/
+Release/
+*.vcxproj
+*.filters
+*.user
+ErrorLog.txt
